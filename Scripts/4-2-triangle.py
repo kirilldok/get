@@ -16,10 +16,10 @@ try:
         t= float(T)/256/2
         for i in range(256):
             gpio.output(dac, perev(i, 8))
-            sleep(t)
+            
         for i in range(255, -1, -1):
             gpio.output(dac, perev(i, 8))
-            sleep(t)
+            
 finally:
     gpio.output(dac, 1)
     gpio.cleanup()
